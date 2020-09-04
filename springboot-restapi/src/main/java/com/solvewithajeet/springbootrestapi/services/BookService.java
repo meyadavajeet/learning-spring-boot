@@ -18,7 +18,7 @@ public class BookService {
         list.add(new Book(12, "Complete java reference", "XYZ"));
         list.add(new Book(13, "Complete Python reference", "abc"));
         list.add(new Book(14, "Complete php reference", "lmn"));
-        list.add(new Book(141, "Complete mysql reference", "ajeet"));
+        list.add(new Book(15, "Complete mysql reference", "ajeet"));
     }
 
     /**
@@ -34,7 +34,11 @@ public class BookService {
      */
     public Book getBookById(int id) {
         Book book = null;
-        book = list.stream().filter(e -> e.getId() == id).findFirst().get();
+        try {
+             book = list.stream().filter(e -> e.getId() == id).findFirst().get();
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
         return book;
     }
 
