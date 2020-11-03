@@ -24,6 +24,11 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
+    @GetMapping(value = "/")
+    public String index() {
+        return "This is the spring boot application for the RestApi";
+    }
+
     /**
      * Get All books handler
      */

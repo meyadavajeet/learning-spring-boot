@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>loop-example</title>
+</head>
+<body>
+<h2>Going to travers element in collection</h2>
+<h4 th:text="${siblings_names}"></h4>
+<!--iterate using th:each-->
+<ul>
+    <li th:each="snames:${siblings_names}"><span th:text="${snames}"></span></li>
+</ul>
+<p>
+    index : the current iteration index, starting with 0 (zero)<br/>
+    count: the number of elements processed so far<br/>
+    size : the total number of elements in the list<br/>
+    even/odd: checks if the current iteratiom is the first one<br/>
+    first: checks if the current iteration is the first one<br/>
+    last: checks if the current iteration is the last one<br/>
+</p>
+<ul>
+    <li th:each="snames,status:${siblings_names}">
+        <span th:style="${status.odd} ? 'color:red;font-weight:bold' : '' "
+              th:text="${status.index}+' '+${snames}"></span>
+    </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>about</title>
+</head>
+<body>
+<div>
+    <h1>About Page</h1>
+    <h1>Welcome to about page</h1>
+    <h1>Name of the owner is <span th:text="${name}"></span></h1>
+    <!--    use inbuilt function of java in thymeleaf-->
+    <h1>Name of the owner is <span th:text="${#strings.toUpperCase(name)}"></span></h1>
+    <h2>length of string <span th:text="${#strings.length(name)}"></span></h2>
+    <h2>Current date <span th:text="${currentDate}"></span></h2>
+</div>
+<!--declare local veriable this variable only acessable inside div-->
+<div th:with="a=10, b=20, n=${name}">
+    <h4 th:text="${a+b}"></h4>
+    <h3>local value of n is <span th:text="${n}"></span></h3>
+    <!--    print value without using span use singl e quote in the place of span-->
+    <h3 th:text="'value of b is ' + ${b}"></h3>
+</div>
+</body>
+</html>
