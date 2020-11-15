@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aj Document</title>
+</head>
+<body>
+<header>This is the header content</header>
+<h1>Main content </h1>
+<!--    this is for the static value-->
+<!--    <footer th:replace="footerWithDynamicData::footer2('This is title','This is subtitle')">-->
+
+<!--    </footer>-->
+<!--this is for the dynamic value- value get from the controller-->
+<footer th:replace="footerWithDynamicData::footer2(${title},${subtitle})">
+</footer>
+</body>
+</html>

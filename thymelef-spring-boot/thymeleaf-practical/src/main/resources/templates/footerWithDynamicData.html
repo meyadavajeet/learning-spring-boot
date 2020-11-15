@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Footer</title>
+</head>
+<body>
+<footer th:fragment="footer2(title,subtitle)">
+    <h2 th:text="${title}"></h2>
+    <h2 th:text="${subtitle}"></h2>
+    footer with dynamic value
+
+</footer>
+</body>
+</html>
