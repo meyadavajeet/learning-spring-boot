@@ -1,0 +1,12 @@
+important commands of spring boot for webpack
+_______________________
+
+# run the application in one command line window
+$ mvn spring-boot:run
+
+#fetch http://localhost:8080/api/hello with curl in your terminal
+
+$ curl http://localhost:8080/api/hello
+
+
+
